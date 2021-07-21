@@ -1,13 +1,7 @@
-FROM ubuntu
+FROM docker.io/devopsedu/webapp
 
-MAINTAINER chetana
+ADD website /var/www/html
 
-RUN sudo apt-get update
+RUN rm /var/www/html/index.html
 
-RUN sudo apt-get install -y openjdk-8-jdk
-
-RUN sudo apt-get install -y docker.io
-
-RUN sudo systemctl start docker
-
-RUN sudo systemctl enable docker  
+CMD apachectl -D FOREGROUND
