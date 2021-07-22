@@ -35,7 +35,9 @@ pipeline {
       agent {label 'master'}
       steps{
         script {
-         anchore engineRetries: '500', name: 'docker.io/chetana3/scan:3'
+def imageLine = chetana3/scan:3 + '' + /home/ubuntu/docker + '/Dockerfile'
+writeFile file: 'anchore_images', text: imageLine
+anchore name: 'anchore_images' , engineRetries: '700'
         }
       }
     }
