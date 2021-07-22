@@ -31,6 +31,14 @@ pipeline {
         }
       }
     }
+    stage('Scan Image') {
+      agent {label 'master'}
+      steps{
+        script {
+          anchore 'anchore_images'
+        }
+      }
+    }
     stage('Removing container if it already exists') {
       agent {label 'master'}
       steps{
