@@ -35,7 +35,7 @@ pipeline {
       agent {label 'master'}
       steps{
         script {
-         anchore engineRetries: '500', name: '/home/ubuntu/docker/Dockerfile'
+         anchore engineRetries: '500', name: 'docker.io/chetana3/scan:3'
         }
       }
     }
