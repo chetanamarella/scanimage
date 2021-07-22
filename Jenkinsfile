@@ -35,7 +35,7 @@ pipeline {
       agent {label 'master'}
       steps{
         script {
-          anchore 'dockerImage'
+         anchore engineRetries: '500', name: '/home/ubuntu/docker/Dockerfile'
         }
       }
     }
