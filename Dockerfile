@@ -1,7 +1,7 @@
-FROM docker.io/devopsedu/webapp
+FROM nginx 
 
-ADD website /var/www/html
+MAINTAINER chetana
 
-RUN rm /var/www/html/index.html
+RUN apt-get update 
 
-CMD apachectl -D FOREGROUND
+
