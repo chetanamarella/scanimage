@@ -35,7 +35,7 @@ pipeline {
       agent {label 'master'}
       steps{
         script {
-          anchore 'anchore_images'
+          anchore 'dockerImage'
         }
       }
     }
