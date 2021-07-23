@@ -35,7 +35,7 @@ pipeline {
       agent {label 'master'}
       steps{
         script {
-          def imageLine = '$(dockerImage)'
+          def imageLine = 'registry + ":$BUILD_NUMBER"'
           writeFile file: 'anchore_images', text: imageLine
           anchore name: 'anchore_images' 
         }
