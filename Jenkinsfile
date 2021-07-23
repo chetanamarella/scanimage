@@ -35,7 +35,7 @@ pipeline {
       agent {label 'master'}
       steps{
         script {
-          sh 'echo "docker.io/chetana3/scan:6 /home/ubuntu/docker/Dockerfile" > anchore_images'
+          sh 'echo "chetana3/scan:6 /home/ubuntu/docker/Dockerfile" > anchore_images'
           anchore name: 'anchore_images' 
         }
       }
