@@ -35,9 +35,9 @@ pipeline {
       agent {label 'master'}
       steps{
         script {
-          def imageLine = chetana3/scan:3 + '' + /home/ubuntu/docker + '/Dockerfile'
+          def imageLine = 'debian:latest'
           writeFile file: 'anchore_images', text: imageLine
-          anchore name: 'anchore_images' , engineRetries: '700'
+          anchore name: 'anchore_images' 
         }
       }
     }
