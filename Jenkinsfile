@@ -17,7 +17,7 @@ pipeline {
       agent {label 'master'}
       steps{
         script {
-          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+          dockerImage = docker.build registry + ":latest"
         }
       }
     }
@@ -35,7 +35,7 @@ pipeline {
       agent {label 'master'}
       steps{
         script {
-          sh 'echo "$dockerImage /home/ubuntu/docker/Dockerfile" > anchore_images'
+          sh 'echo "chetana3/scan:latest /home/ubuntu/docker/Dockerfile" > anchore_images'
           anchore name: 'anchore_images' 
         }
       }
