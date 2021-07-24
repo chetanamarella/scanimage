@@ -35,7 +35,7 @@ pipeline {
       agent {label 'master'}
       steps{
         script {
-          def imageLine = 'chetana3/scan:latest'
+          def imageLine = 'debian:latest'
           writeFile file: 'anchore_images', text: 'imageLine' 
           anchore name: 'anchore_images' 
         }
