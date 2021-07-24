@@ -35,7 +35,8 @@ pipeline {
       agent {label 'master'}
       steps{
         script {
-          sh 'echo "chetana3/scan:latest /home/ubuntu/docker/Dockerfile" > anchore_images'
+          def imageLine = 'chetana3/scan:latest'
+          writeFile file: 'anchore_images', text: imageLine' 
           anchore name: 'anchore_images' 
         }
       }
