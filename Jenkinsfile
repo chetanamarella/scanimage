@@ -36,7 +36,7 @@ pipeline {
       steps{
         script {
           def imageLine = 'chetana3/scan:latest'
-          writeFile file: 'anchore_images', text: imageLine' 
+          writeFile file: 'anchore_images', text: 'imageLine' 
           anchore name: 'anchore_images' 
         }
       }
