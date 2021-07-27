@@ -31,7 +31,7 @@ pipeline {
         }
       }
     }
- /*   stage('Scan Image') {
+    stage('Scan Image') {
       agent {label 'master'}
       steps{
         script {
@@ -41,6 +41,7 @@ pipeline {
         }
       }
     }
+    /*
     stage('Removing container if it already exists') {
       agent {label 'master'}
       steps{
