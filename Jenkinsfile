@@ -78,7 +78,8 @@ pipeline {
     stage('Deploy through kubernetes') {
       agent {label 'master'}
       steps{
-        sh 'cd /home/ubuntu/kube'
+        sh 'cd /home/ubuntu/kube/'
+        sh 'pwd'
         sh 'kubectl create -f deploy.yml'
         sh 'kubectl create -f service.yml'
       }
