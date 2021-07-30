@@ -77,7 +77,7 @@ pipeline {
       }
     }  */
     stage('Deploy through kubernetes') {
-      agent {label 'master'}
+      agent {label 'slave'}
       steps{
         sh 'kubectl create -f deploy.yml'
         sh 'kubectl create -f service.yml'
